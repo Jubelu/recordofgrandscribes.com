@@ -1,1 +1,1 @@
-This website is a repository for historical texts of Europe and China during the Middle Age
+<meta http-equiv="refresh" content="0; url=https://jubelu.github.io/recordofgrandscribes.com/mainmenu..html">
