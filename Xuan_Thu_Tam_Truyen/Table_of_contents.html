@@ -1,0 +1,637 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xuân thu tam truyện - Mục lục</title>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap"
+  rel="stylesheet"
+/>
+
+<style>
+
+@media screen and (max-width: 768px) {
+
+    .chapter-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-title {
+        font-size: clamp(28px, 8vw, 42px);
+    }
+
+    .chapter-link {
+        font-size: 16px;
+    }
+
+    .section-summary {
+        font-size: 22px;
+    }
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+
+    font-family: "Calibri", "Kaiti TC";
+
+    background-image: url('xuanthu2.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.hero-banner {
+    width: 100%;
+    min-height: 40vh;
+
+    background-image: url('xuanthu.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 20px;
+}
+
+.hero-title {
+    font-family: 'Ma Shan Zheng', cursive;
+    color: white;
+
+    font-size: clamp(32px, 7vw, 80px);
+
+    text-align: center;
+
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+
+    line-height: 1.2;
+}
+
+.main-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* SECTION DROPDOWN */
+.chapter-section {
+    margin-bottom: 20px;
+
+    border-radius: 10px;
+    overflow: hidden;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+
+    background: rgba(255,255,255,0.85);
+}
+
+.section-summary {
+    list-style: none;
+
+    background-color: #D6ACA3;
+    color: white;
+
+    padding: 18px 24px;
+
+    font-size: 28px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    user-select: none;
+
+    transition: background 0.2s ease;
+}
+
+.section-summary:hover {
+    background-color: #c19389;
+}
+
+.section-summary::-webkit-details-marker {
+    display: none;
+}
+
+.section-summary::after {
+    content: '＋';
+    float: right;
+    font-size: 24px;
+}
+
+.chapter-section[open] .section-summary::after {
+    content: '−';
+}
+
+/* GRID */
+.chapter-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.chapter-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 70px;
+
+    text-decoration: none;
+
+    font-size: 20px;
+
+    color: black;
+
+    border: 1px solid rgba(0,0,0,0.05);
+
+    transition: all 0.2s ease;
+
+    text-align: center;
+
+    padding: 10px;
+
+    box-sizing: border-box;
+}
+
+.chapter-link:nth-child(odd) {
+    background-color: #E8D7D3;
+}
+
+.chapter-link:nth-child(even) {
+    background-color: #CFC7C6;
+}
+
+.chapter-link:hover {
+    background-color: #d8c0bb;
+    transform: scale(1.01);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="hero-banner">
+    <div class="hero-title">
+        春秋三傳 - Xuân thu tam truyện
+    </div>
+</div>
+
+<div class="main-wrapper">
+
+    <!-- ẨN CÔNG -->
+    <details class="chapter-section" open>
+
+        <summary class="section-summary">
+            Ẩn Công
+        </summary>
+
+        <div class="chapter-grid">
+
+            <a class="chapter-link" href="An_Cong\An_Cong_1.html">
+                Ẩn công nguyên niên
+            </a>
+
+            <a class="chapter-link" href="">
+                Ẩn công năm thứ 2
+            </a>
+
+            <a class="chapter-link" href="">
+                Ẩn công năm thứ 3
+            </a>
+
+            <a class="chapter-link" href="">
+                Ẩn công năm thứ 4
+            </a>
+
+            <a class="chapter-link" href="">
+                Ẩn công năm thứ 5
+            </a>
+
+            <a class="chapter-link" href="">
+                Ẩn công năm thứ 6
+            </a>
+
+            <a class="chapter-link" href="">
+                Ẩn công năm thứ 7
+            </a>
+
+            <a class="chapter-link" href="">
+                Ẩn công năm thứ 8
+            </a>
+
+            <a class="chapter-link" href="">
+                Ẩn công năm thứ 9
+            </a>
+
+            <a class="chapter-link" href="">
+                Ẩn công năm thứ 10
+            </a>
+
+            <a class="chapter-link" href="">
+                Ẩn công năm thứ 11
+            </a>
+
+        </div>
+
+    </details>
+
+
+    <!-- HOÀN CÔNG -->
+    <details class="chapter-section">
+
+        <summary class="section-summary">
+            Hoàn Công
+        </summary>
+
+        <div class="chapter-grid">
+
+            <a class="chapter-link" href="">
+                Hoàn công nguyên niên
+            </a>
+
+            <a class="chapter-link" href="">
+                Hoàn công năm thứ 2
+            </a>
+
+            <a class="chapter-link" href="">
+                Hoàn công năm thứ 3
+            </a>
+
+            <a class="chapter-link" href="">
+                Hoàn công năm thứ 4
+            </a>
+
+            <a class="chapter-link" href="">
+                Hoàn công năm thứ 5
+            </a>
+
+            <a class="chapter-link" href="">
+                Hoàn công năm thứ 6
+            </a>
+
+            <a class="chapter-link" href="">
+                Hoàn công năm thứ 7
+            </a>
+
+            <a class="chapter-link" href="">
+                Hoàn công năm thứ 8
+            </a>
+
+            <a class="chapter-link" href="">
+                Hoàn công năm thứ 9
+            </a>
+
+            <a class="chapter-link" href="">
+                Hoàn công năm thứ 10
+            </a>
+
+            <a class="chapter-link" href="">
+                Hoàn công năm thứ 11
+            </a>
+
+            <a class="chapter-link" href="">
+                Hoàn công năm thứ 12
+            </a>
+
+            <a class="chapter-link" href="">
+                Hoàn công năm thứ 13
+            </a>
+
+            <a class="chapter-link" href="">
+                Hoàn công năm thứ 14
+            </a>
+
+            <a class="chapter-link" href="">
+                Hoàn công năm thứ 15
+            </a>
+
+            <a class="chapter-link" href="">
+                Hoàn công năm thứ 16
+            </a>
+
+            <a class="chapter-link" href="">
+                Hoàn công năm thứ 17
+            </a>
+
+            <a class="chapter-link" href="">
+                Hoàn công năm thứ 18
+            </a>
+
+        </div>
+
+    </details>
+
+
+    <!-- TRANG CÔNG -->
+    <details class="chapter-section">
+
+        <summary class="section-summary">
+            Trang Công
+        </summary>
+
+        <div class="chapter-grid">
+
+            <a class="chapter-link" href="">
+                Trang công nguyên niên
+            </a>
+
+            <a class="chapter-link" href="">
+                Trang công năm thứ 2
+            </a>
+
+            <a class="chapter-link" href="">
+                Trang công năm thứ 3
+            </a>
+
+            <a class="chapter-link" href="">
+                Trang công năm thứ 4
+            </a>
+
+            <a class="chapter-link" href="">
+                Trang công năm thứ 5
+            </a>
+
+            <a class="chapter-link" href="">
+                Trang công năm thứ 6
+            </a>
+
+            <!-- CONTINUE THE SAME PATTERN -->
+
+        </div>
+
+    </details>
+
+
+    <!-- MẪN CÔNG -->
+    <details class="chapter-section">
+        <summary class="section-summary">Mẫn Công</summary>
+        <div class="chapter-grid">
+            <a class="chapter-link" href="">Mẫn công nguyên niên</a>
+            <a class="chapter-link" href="">Mẫn công năm thứ 2</a>
+        </div>
+    </details>
+
+    <!-- HI CÔNG -->
+    <details class="chapter-section">
+        <summary class="section-summary">Hi Công</summary>
+        <div class="chapter-grid">
+            <a class="chapter-link" href="">Hi công nguyên niên</a>
+            <a class="chapter-link" href="">Hi công năm thứ 2</a>
+            <a class="chapter-link" href="">Hi công năm thứ 3</a>
+            <a class="chapter-link" href="">Hi công năm thứ 4</a>
+            <a class="chapter-link" href="">Hi công năm thứ 5</a>
+            <a class="chapter-link" href="">Hi công năm thứ 6</a>
+            <a class="chapter-link" href="">Hi công năm thứ 7</a>
+            <a class="chapter-link" href="">Hi công năm thứ 8</a>
+            <a class="chapter-link" href="">Hi công năm thứ 9</a>
+            <a class="chapter-link" href="">Hi công năm thứ 10</a>
+            <a class="chapter-link" href="">Hi công năm thứ 11</a>
+            <a class="chapter-link" href="">Hi công năm thứ 12</a>
+            <a class="chapter-link" href="">Hi công năm thứ 13</a>
+            <a class="chapter-link" href="">Hi công năm thứ 14</a>
+            <a class="chapter-link" href="">Hi công năm thứ 15</a>
+            <a class="chapter-link" href="">Hi công năm thứ 16</a>
+            <a class="chapter-link" href="">Hi công năm thứ 17</a>
+            <a class="chapter-link" href="">Hi công năm thứ 18</a>
+            <a class="chapter-link" href="">Hi công năm thứ 19</a>
+            <a class="chapter-link" href="">Hi công năm thứ 20</a>
+            <a class="chapter-link" href="">Hi công năm thứ 21</a>
+            <a class="chapter-link" href="">Hi công năm thứ 22</a>
+            <a class="chapter-link" href="">Hi công năm thứ 23</a>
+            <a class="chapter-link" href="">Hi công năm thứ 24</a>
+            <a class="chapter-link" href="">Hi công năm thứ 25</a>
+            <a class="chapter-link" href="">Hi công năm thứ 26</a>
+            <a class="chapter-link" href="">Hi công năm thứ 27</a>
+            <a class="chapter-link" href="">Hi công năm thứ 28</a>
+            <a class="chapter-link" href="">Hi công năm thứ 29</a>
+            <a class="chapter-link" href="">Hi công năm thứ 30</a>
+            <a class="chapter-link" href="">Hi công năm thứ 31</a>
+            <a class="chapter-link" href="">Hi công năm thứ 32</a>
+            <a class="chapter-link" href="">Hi công năm thứ 33</a>
+        </div>
+    </details>
+
+    <!-- VĂN CÔNG -->
+    <details class="chapter-section">
+        <summary class="section-summary">Văn Công</summary>
+        <div class="chapter-grid">
+            <a class="chapter-link" href="">Văn công nguyên niên</a>
+            <a class="chapter-link" href="">Văn công năm thứ 2</a>
+            <a class="chapter-link" href="">Văn công năm thứ 3</a>
+            <a class="chapter-link" href="">Văn công năm thứ 4</a>
+            <a class="chapter-link" href="">Văn công năm thứ 5</a>
+            <a class="chapter-link" href="">Văn công năm thứ 6</a>
+            <a class="chapter-link" href="">Văn công năm thứ 7</a>
+            <a class="chapter-link" href="">Văn công năm thứ 8</a>
+            <a class="chapter-link" href="">Văn công năm thứ 9</a>
+            <a class="chapter-link" href="">Văn công năm thứ 10</a>
+            <a class="chapter-link" href="">Văn công năm thứ 11</a>
+            <a class="chapter-link" href="">Văn công năm thứ 12</a>
+            <a class="chapter-link" href="">Văn công năm thứ 13</a>
+            <a class="chapter-link" href="">Văn công năm thứ 14</a>
+            <a class="chapter-link" href="">Văn công năm thứ 15</a>
+            <a class="chapter-link" href="">Văn công năm thứ 16</a>
+        </div>
+    </details>
+
+    <!-- TUYÊN CÔNG -->
+    <details class="chapter-section">
+        <summary class="section-summary">Tuyên Công</summary>
+        <div class="chapter-grid">
+            <a class="chapter-link" href="">Tuyên công nguyên niên</a>
+            <a class="chapter-link" href="">Tuyên công năm thứ 2</a>
+            <a class="chapter-link" href="">Tuyên công năm thứ 3</a>
+            <a class="chapter-link" href="">Tuyên công năm thứ 4</a>
+            <a class="chapter-link" href="">Tuyên công năm thứ 5</a>
+            <a class="chapter-link" href="">Tuyên công năm thứ 6</a>
+            <a class="chapter-link" href="">Tuyên công năm thứ 7</a>
+            <a class="chapter-link" href="">Tuyên công năm thứ 8</a>
+            <a class="chapter-link" href="">Tuyên công năm thứ 9</a>
+            <a class="chapter-link" href="">Tuyên công năm thứ 10</a>
+            <a class="chapter-link" href="">Tuyên công năm thứ 11</a>
+            <a class="chapter-link" href="">Tuyên công năm thứ 12</a>
+            <a class="chapter-link" href="">Tuyên công năm thứ 13</a>
+            <a class="chapter-link" href="">Tuyên công năm thứ 14</a>
+            <a class="chapter-link" href="">Tuyên công năm thứ 15</a>
+            <a class="chapter-link" href="">Tuyên công năm thứ 16</a>
+            <a class="chapter-link" href="">Tuyên công năm thứ 17</a>
+            <a class="chapter-link" href="">Tuyên công năm thứ 18</a>
+        </div>
+    </details>
+
+    <!-- THÀNH CÔNG -->
+    <details class="chapter-section">
+        <summary class="section-summary">Thành Công</summary>
+        <div class="chapter-grid">
+            <a class="chapter-link" href="">Thành công nguyên niên</a>
+            <a class="chapter-link" href="">Thành công năm thứ 2</a>
+            <a class="chapter-link" href="">Thành công năm thứ 3</a>
+            <a class="chapter-link" href="">Thành công năm thứ 4</a>
+            <a class="chapter-link" href="">Thành công năm thứ 5</a>
+            <a class="chapter-link" href="">Thành công năm thứ 6</a>
+            <a class="chapter-link" href="">Thành công năm thứ 7</a>
+            <a class="chapter-link" href="">Thành công năm thứ 8</a>
+            <a class="chapter-link" href="">Thành công năm thứ 9</a>
+            <a class="chapter-link" href="">Thành công năm thứ 10</a>
+            <a class="chapter-link" href="">Thành công năm thứ 11</a>
+            <a class="chapter-link" href="">Thành công năm thứ 12</a>
+            <a class="chapter-link" href="">Thành công năm thứ 13</a>
+            <a class="chapter-link" href="">Thành công năm thứ 14</a>
+            <a class="chapter-link" href="">Thành công năm thứ 15</a>
+            <a class="chapter-link" href="">Thành công năm thứ 16</a>
+            <a class="chapter-link" href="">Thành công năm thứ 17</a>
+            <a class="chapter-link" href="">Thành công năm thứ 18</a>
+        </div>
+    </details>
+
+    <!-- TƯƠNG CÔNG -->
+    <details class="chapter-section">
+        <summary class="section-summary">Tương Công</summary>
+        <div class="chapter-grid">
+            <a class="chapter-link" href="">Tương công nguyên niên</a>
+            <a class="chapter-link" href="">Tương công năm thứ 2</a>
+            <a class="chapter-link" href="">Tương công năm thứ 3</a>
+            <a class="chapter-link" href="">Tương công năm thứ 4</a>
+            <a class="chapter-link" href="">Tương công năm thứ 5</a>
+            <a class="chapter-link" href="">Tương công năm thứ 6</a>
+            <a class="chapter-link" href="">Tương công năm thứ 7</a>
+            <a class="chapter-link" href="">Tương công năm thứ 8</a>
+            <a class="chapter-link" href="">Tương công năm thứ 9</a>
+            <a class="chapter-link" href="">Tương công năm thứ 10</a>
+            <a class="chapter-link" href="">Tương công năm thứ 11</a>
+            <a class="chapter-link" href="">Tương công năm thứ 12</a>
+            <a class="chapter-link" href="">Tương công năm thứ 13</a>
+            <a class="chapter-link" href="">Tương công năm thứ 14</a>
+            <a class="chapter-link" href="">Tương công năm thứ 15</a>
+            <a class="chapter-link" href="">Tương công năm thứ 16</a>
+            <a class="chapter-link" href="">Tương công năm thứ 17</a>
+            <a class="chapter-link" href="">Tương công năm thứ 18</a>
+            <a class="chapter-link" href="">Tương công năm thứ 19</a>
+            <a class="chapter-link" href="">Tương công năm thứ 20</a>
+            <a class="chapter-link" href="">Tương công năm thứ 21</a>
+            <a class="chapter-link" href="">Tương công năm thứ 22</a>
+            <a class="chapter-link" href="">Tương công năm thứ 23</a>
+            <a class="chapter-link" href="">Tương công năm thứ 24</a>
+            <a class="chapter-link" href="">Tương công năm thứ 25</a>
+            <a class="chapter-link" href="">Tương công năm thứ 26</a>
+            <a class="chapter-link" href="">Tương công năm thứ 27</a>
+            <a class="chapter-link" href="">Tương công năm thứ 28</a>
+            <a class="chapter-link" href="">Tương công năm thứ 29</a>
+            <a class="chapter-link" href="">Tương công năm thứ 30</a>
+            <a class="chapter-link" href="">Tương công năm thứ 31</a>
+        </div>
+    </details>
+
+    <!-- CHIÊU CÔNG -->
+    <details class="chapter-section">
+        <summary class="section-summary">Chiêu Công</summary>
+        <div class="chapter-grid">
+            <a class="chapter-link" href="">Chiêu công nguyên niên</a>
+            <a class="chapter-link" href="">Chiêu công năm thứ 2</a>
+            <a class="chapter-link" href="">Chiêu công năm thứ 3</a>
+            <a class="chapter-link" href="">Chiêu công năm thứ 4</a>
+            <a class="chapter-link" href="">Chiêu công năm thứ 5</a>
+            <a class="chapter-link" href="">Chiêu công năm thứ 6</a>
+            <a class="chapter-link" href="">Chiêu công năm thứ 7</a>
+            <a class="chapter-link" href="">Chiêu công năm thứ 8</a>
+            <a class="chapter-link" href="">Chiêu công năm thứ 9</a>
+            <a class="chapter-link" href="">Chiêu công năm thứ 10</a>
+            <a class="chapter-link" href="">Chiêu công năm thứ 11</a>
+            <a class="chapter-link" href="">Chiêu công năm thứ 12</a>
+            <a class="chapter-link" href="">Chiêu công năm thứ 13</a>
+            <a class="chapter-link" href="">Chiêu công năm thứ 14</a>
+            <a class="chapter-link" href="">Chiêu công năm thứ 15</a>
+            <a class="chapter-link" href="">Chiêu công năm thứ 16</a>
+            <a class="chapter-link" href="">Chiêu công năm thứ 17</a>
+            <a class="chapter-link" href="">Chiêu công năm thứ 18</a>
+            <a class="chapter-link" href="">Chiêu công năm thứ 19</a>
+            <a class="chapter-link" href="">Chiêu công năm thứ 20</a>
+            <a class="chapter-link" href="">Chiêu công năm thứ 21</a>
+            <a class="chapter-link" href="">Chiêu công năm thứ 22</a>
+            <a class="chapter-link" href="">Chiêu công năm thứ 23</a>
+            <a class="chapter-link" href="">Chiêu công năm thứ 24</a>
+            <a class="chapter-link" href="">Chiêu công năm thứ 25</a>
+            <a class="chapter-link" href="">Chiêu công năm thứ 26</a>
+            <a class="chapter-link" href="">Chiêu công năm thứ 27</a>
+            <a class="chapter-link" href="">Chiêu công năm thứ 28</a>
+            <a class="chapter-link" href="">Chiêu công năm thứ 29</a>
+            <a class="chapter-link" href="">Chiêu công năm thứ 30</a>
+            <a class="chapter-link" href="">Chiêu công năm thứ 31</a>
+            <a class="chapter-link" href="">Chiêu công năm thứ 32</a>
+        </div>
+    </details>
+        <!-- ĐỊNH CÔNG -->
+    <details class="chapter-section">
+        <summary class="section-summary">Định Công</summary>
+        <div class="chapter-grid">
+            <a class="chapter-link" href="">Định công nguyên niên</a>
+            <a class="chapter-link" href="">Định công năm thứ 2</a>
+            <a class="chapter-link" href="">Định công năm thứ 3</a>
+            <a class="chapter-link" href="">Định công năm thứ 4</a>
+            <a class="chapter-link" href="">Định công năm thứ 5</a>
+            <a class="chapter-link" href="">Định công năm thứ 6</a>
+            <a class="chapter-link" href="">Định công năm thứ 7</a>
+            <a class="chapter-link" href="">Định công năm thứ 8</a>
+            <a class="chapter-link" href="">Định công năm thứ 9</a>
+            <a class="chapter-link" href="">Định công năm thứ 10</a>
+            <a class="chapter-link" href="">Định công năm thứ 11</a>
+            <a class="chapter-link" href="">Định công năm thứ 12</a>
+            <a class="chapter-link" href="">Định công năm thứ 13</a>
+            <a class="chapter-link" href="">Định công năm thứ 14</a>
+            <a class="chapter-link" href="">Định công năm thứ 15</a>
+            <a class="chapter-link" href="">Định công năm thứ 16</a>
+            <a class="chapter-link" href="">Định công năm thứ 17</a>
+            <a class="chapter-link" href="">Định công năm thứ 18</a>
+            <a class="chapter-link" href="">Định công năm thứ 19</a>
+            <a class="chapter-link" href="">Định công năm thứ 20</a>
+            <a class="chapter-link" href="">Định công năm thứ 21</a>
+            <a class="chapter-link" href="">Định công năm thứ 22</a>
+            <a class="chapter-link" href="">Định công năm thứ 23</a>
+            <a class="chapter-link" href="">Định công năm thứ 24</a>
+            <a class="chapter-link" href="">Định công năm thứ 25</a>
+</div>
+</details>
+                <!-- AI CÔNG -->
+    <details class="chapter-section">
+        <summary class="section-summary">Ai Công</summary>
+        <div class="chapter-grid">
+            <a class="chapter-link" href="">Ai công nguyên niên</a>
+            <a class="chapter-link" href="">Ai công năm thứ 2</a>
+            <a class="chapter-link" href="">Ai công năm thứ 3</a>
+            <a class="chapter-link" href="">Ai công năm thứ 4</a>
+            <a class="chapter-link" href="">Ai công năm thứ 5</a>
+            <a class="chapter-link" href="">Ai công năm thứ 6</a>
+            <a class="chapter-link" href="">Ai công năm thứ 7</a>
+            <a class="chapter-link" href="">Ai công năm thứ 8</a>
+            <a class="chapter-link" href="">Ai công năm thứ 9</a>
+            <a class="chapter-link" href="">Ai công năm thứ 10</a>
+            <a class="chapter-link" href="">Ai công năm thứ 11</a>
+            <a class="chapter-link" href="">Ai công năm thứ 12</a>
+            <a class="chapter-link" href="">Ai công năm thứ 13</a>
+            <a class="chapter-link" href="">Ai công năm thứ 14</a>
+            <a class="chapter-link" href="">Ai công năm thứ 15</a>
+            <a class="chapter-link" href="">Ai công năm thứ 16</a>
+            <a class="chapter-link" href="">Ai công năm thứ 17</a>
+            <a class="chapter-link" href="">Ai công năm thứ 18</a>
+            <a class="chapter-link" href="">Ai công năm thứ 19</a>
+            <a class="chapter-link" href="">Ai công năm thứ 20</a>
+            <a class="chapter-link" href="">Ai công năm thứ 21</a>
+            <a class="chapter-link" href="">Ai công năm thứ 22</a>
+            <a class="chapter-link" href="">Ai công năm thứ 23</a>
+            <a class="chapter-link" href="">Ai công năm thứ 24</a>
+            <a class="chapter-link" href="">Ai công năm thứ 25</a>
+            <a class="chapter-link" href="">Ai công năm thứ 26</a>
+            <a class="chapter-link" href="">Ai công năm thứ 27</a>
+</div>
+</details>
+</div>
+</body>
+</html>
+
