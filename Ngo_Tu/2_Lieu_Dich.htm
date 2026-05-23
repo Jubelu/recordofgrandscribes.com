@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngô tử 2</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet"/>
+
+    <style>
+    @media screen and (max-width: 768px) {
+        tr {
+            display: block;
+        }
+
+        td {
+            display: block;
+            width: 100% !important;
+        }
+
+        .header {
+            font-size: 36px !important;
+            height: auto !important;
+            padding: 40px 20px;
+        }
+
+        .dropdown-content {
+            width: 100%;
+            left: 0;
+        }
+
+        p, div, td {
+            font-size: 16px !important;
+            line-height: 1.6;
+        }
+    }
+
+    html, body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }/* TABLE LAYOUT FIX */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background-image: url('xuanthu2.jpg');
+        background-color: #EDE3E1;
+    }
+
+    td, th {
+        padding: 12px;
+        vertical-align: top;
+        font-family: "Calibri", "Kaiti TC";
+        font-size: 18px;
+    }/* HEADER */
+    .header {
+        background-color: #d1d1d1;
+        font-size: 50px;
+        text-align: center;
+    }/* SECTION TITLE */
+    .section-title {
+        background-color: #E8E3C3;
+        text-align: center;
+        font-size: 20px;
+    }/* COLLAPSIBLE FIX */
+    details {
+        width: 100%;
+    }
+
+    details > div {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-top: 5px;
+        box-sizing: border-box;
+        overflow-wrap: break-word;
+    }/* TEXT */
+    p {
+        margin: 8px 0;
+        text-align: justify;
+    }
+
+    .hero-banner {
+        width: 100%;
+        min-height: 40vh;
+        background-image: url('xuanthu.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+    }
+
+    .hero-title {
+        font-family: 'Ma Shan Zheng', cursive;
+        color: white;
+        font-size: clamp(32px, 7vw, 80px);
+        text-align: center;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+        line-height: 1.2;
+    }
+
+    .dropdown-td {
+        position: relative !important;
+        /* This is the anchor */
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        /* Changed from relative to absolute */
+        width: 200px;
+        background-color: #6E5945;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+        z-index: 100;
+        left: 0;
+        top: 100%;
+        /* ADDED: This handles the long list of chapters */
+        max-height: 400px;
+        overflow-y: auto;
+        padding-top: 12px;
+        color: #FFFFFF;
+        text-align: left;
+        font-family: sans-serif;
+        line-height: 1.2;
+    }/* Treat the first line of text as a header */
+    .dropdown-content {
+        font-size: 12px;
+        letter-spacing: 1px;
+        /* This ensures "CHƯƠNG 1" has the same left-alignment as the links */
+        text-indent: 16px;
+    }/* Style the links so they look like buttons */
+    .dropdown-content a {
+        color: white;
+        padding: 10px 16px;
+        text-decoration: none;
+        display: block;
+        font-weight: normal;
+        font-size: 14px;
+        text-indent: 0;
+        /* Reset the indent from the parent */
+        transition: background 0.2s;
+    }/* A subtle hover that doesn't clash with brown */
+    .dropdown-content a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }/* Show menu */
+    .dropdown-td:hover .dropdown-content {
+        display: block;
+    }/* Clean up the separator */
+    .dropdown-content hr {
+        border: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+        margin: 5px 0;
+    }
+
+    .hero-section {
+        position: relative;
+        width: 100%;
+        min-height: 300px;
+        background-image: url('xuanthu.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: visible;
+    }/* dark overlay */
+    .hero-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.25);
+        z-index: 1;
+    }/* content stays above overlay */
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        text-align: center;
+    }/* title */
+    .hero-title {
+        font-family: 'Ma Shan Zheng', cursive;
+        color: white;
+        font-size: clamp(32px, 7vw, 80px);
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+        padding: 20px;
+    }/* mobile fix */
+    @media screen and (max-width: 768px) {
+        .hero-section {
+            min-height: 220px;
+            background-position: center center;
+        }
+
+        .hero-title {
+            font-size: clamp(28px, 8vw, 42px);
+            line-height: 1.2;
+        }
+
+        .dropdown-content {
+            width: 100%;
+            max-width: 100vw;
+            left: 0;
+        }
+    }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <table>
+        <div class="hero-banner">
+            <div class="hero-title">
+                    吳子 - Ngô tử
+                </div>
+        </div>
+    </table>
+
+    <!-- SECTION TITLE -->
+    <table>
+        <tr>
+            <td class="section-title" style="width:50%;background-color: #C49180; color: white;">
+                <b>第二料敵</b>
+            </td>
+            <td align="center" style=" background-color: #945843; color: white;">
+                <b>
+                     Chương 2 - Liệu địch</b\
+                    </td>
+        </tr>
+        <tr>
+            <td>
+                <p>武侯謂吳起曰：「今秦脅吾西，楚帶吾南，趙衝吾北，齊臨吾東，燕絕吾後，韓據吾前。六國兵四守，勢甚不便。憂此奈何？」</p>
+                <p></p>
+            </td>
+            <td>
+                <p>Vũ hầu nói với Ngô Khởi rằng: "Nay Tần hiếp phía tây của ta; Sở vây phía nam; Triệu đánh phía bắc; Tề lấn phía đông; Yên tuyệt phía sau; Hàn chiếm phía trước. Binh sáu nước phòng thủ bốn phía, thế thực bất tiện. Lo thế nào đây?"</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>起對曰：「夫安國家之道，先戒為寶，今君已戒，禍其遠矣。臣請論六國之俗：</p>
+             </td>
+            <td>Ngô Khởi đáp: "Phàm đạo an quốc gia, trước tiên lấy phòng bị làm quý, nay ngài đã có tâm phòng bị, hoạ cách còn xa. Thần xin luận phong tục sáu nước."</td>
+         <tr>
+             <td>
+                <p>
+                    夫<span style="background-color: #969233; color: white; font-weight: bold; border: 1px solid; padding: 1px 1px; border-radius: 3px;">齊</span>
+                    陳重而不堅，
+                    <br>  
+                    <span style="background-color: black; color: white; font-weight: bold; border: 1px solid; padding: 1px 1px; border-radius: 3px;">秦</span>
+                    陳散而自鬥，
+                    <br>
+                    <span style="background-color: #963333; color: white; font-weight: bold; border: 1px solid; padding: 1px 1px; border-radius: 3px;">楚</span>
+                    陳整而不久，
+                    <br>
+                    <span style="background-color: #338196; color: white; font-weight: bold; border: 1px solid; padding: 1px 1px; border-radius: 3px;">燕</span>
+                    陳守而不走，
+                    <br>
+                    <span style="background-color: #603396; color: white; font-weight: bold; border: 1px solid; padding: 1px 1px; border-radius: 3px;">三晉</span>
+                    陳治而不用。
+                    <br>
+                </p>
+                <p>
+                    </td>
+            
+              
+                <td>Phàm <span style="background-color: #969233; color: white; font-weight: bold; border: 1px solid; padding: 1px 1px; border-radius: 3px;">Tề</span> bày trận giày đặc nhưng không vững chắc<br>
+                     <span style="background-color: black; color: white; font-weight: bold; border: 1px solid; padding: 1px 1px; border-radius: 3px;">Tần</span> bày trận thưa thớt nhưng biết tự đánh<br>
+                    <span style="background-color: #963333; color: white; font-weight: bold; border: 1px solid; padding: 1px 1px; border-radius: 3px;">Sở</span> bày trận ngay ngắn nhưng không giữ được lâu<br>
+                    <span style="background-color: #338196; color: white; font-weight: bold; border: 1px solid; padding: 1px 1px; border-radius: 3px;">Yên</span> bày trận thế thủ nhưng không bỏ chạy<br>
+                    <span style="background-color: #603396; color: white; font-weight: bold; border: 1px solid; padding: 1px 1px; border-radius: 3px;">Tam Tấn</span> bày trận chỉnh tề mà không dùng được.
+                </td>
+              </tr>
+                <tr>
+                    <td>
+                   <p>夫
+                    <span style="background-color: #969233; color: white; font-weight: bold; border: 1px solid; padding: 1px 1px; border-radius: 3px;">齊</span>
+                    性剛，其國富，君臣驕奢而簡於細民，其政寬而祿不均，一陳兩心，前重後輕，故重而不堅。擊此之道，必三分之，獵其左右，脅而從之，其陳可壞。
+                </p>
+                </td>
+                        <td> <p>Phàm người <span style="background-color: #969233; color: white; font-weight: bold; border: 1px solid; padding: 1px 1px; border-radius: 3px;">Tề</span> tính cương nghị, nước họ giàu, quân thần kiêu căng xa xỉ mà chăm lê dân sơ sài; nền chính trị khoan đãi nhưng lộc chia không đều, một trận mà hai lòng, trước trọng sau nhẹ, cho nên bày trọng trận mà không vững. Cách đánh họ ắt phân làm ba, công vào trái phải, uy hiếp mà tiến theo, thì có thể phá hoại trận họ.
+                
+            </td>
+            <tr><td>
+                <p>
+                    <span style="background-color: black; color: white; font-weight: bold; border: 1px solid; padding: 1px 1px; border-radius: 3px;">秦</span>
+                    性強，其地險，其政嚴，其賞罰信，其人不讓，皆有鬥心，故散而自戰。擊此之道，必先示之以利而引去之，士貪於得而離其將，乘乖獵散，設伏投機，其將可取。
+                </p>
+            <td><p>Người <span style="background-color: black; color: white; font-weight: bold; border: 1px solid; padding: 1px 1px; border-radius: 3px;">Tần</span> tính kiên cường, đất họ hiểm, nền chính trị nghiêm khắc, họ thưởng phạt công bằng, không nhún nhường, đều có tâm tranh đấu, cho nên bày trận tản mạt mà tự đánh. Cách đánh họ tất lấy lợi phơi bày mà dẫn dụ họ, binh sỹ tham đắc lợi mà xa rời chủ tướng, thừa lúc li tán công đánh, đặt mai phục thừa cơ, tướng họ ắt bị bắt</p></td>
+            </td></tr>    
+                <tr><td>
+                <p>
+                    <span style="background-color: #963333; color: white; font-weight: bold; border: 1px solid; padding: 1px 1px; border-radius: 3px;">楚</span>
+                    性弱，其地廣，其政騷，其民疲，故整而不久。擊此之道，襲亂其屯，先奪其氣，輕進速退，弊而勞之，勿與爭戰，其軍可敗。
+                </p>
+             </td>
+        <td><p>Người <span style="background-color: #963333; color: white; font-weight: bold; border: 1px solid; padding: 1px 1px; border-radius: 3px;">Sở</span> tính yếu ớt, đất họ rộng, nền chính trị hỗn loạn, dân mỏi mệt, cho nên bày trận ngay ngắn mà không giữ được lâu. Cách đánh họ ắt tập kích gây nhiễu loạn nơi đồn trú, trước tiên đoạt lấy nhuệ khí họ, tiến nhanh lui mau, khiến họ khốn đốn mà làm họ mỏi mệt, tránh đừng giao tranh, thì quân họ có thể đánh bại.</p></td>
+        </tr>
+        <tr><td>
+                <p>
+                    <span style="background-color: #338196; color: white; font-weight: bold; border: 1px solid; padding: 1px 1px; border-radius: 3px;">燕</span>
+                    性愨，其民慎，好勇義，寡詐謀，故守而不走。擊此之道，觸而迫之，凌而遠之，馳而後之，則上疑而下懼，謹我車騎必避之路，其將可虜。
+                </p>
+            </td>
+        <td><p>Người <span style="background-color: #338196; color: white; font-weight: bold; border: 1px solid; padding: 1px 1px; border-radius: 3px;">Yên</span> tính thật thà, dân họ cẩn trọng, mến nghĩa dũng, cho nên cố thủ chứ không bỏ chạy. Cách đánh họ là tiến sát mà bức bách họ, lăng mạ họ mà dụ họ đi xa, ruỗi quân mà tập hậu họ, thì họ trên nghi mà dưới sợ, cẩn trọng quân xa kỵ của ta, ắt tránh đường tất tranh với họ, thì có thể bắt được tướng họ.</p></td>
+        </tr>
+        <tr><td>
+                <p>
+                    <span style="background-color: #603396; color: white; font-weight: bold; border: 1px solid; padding: 1px 1px; border-radius: 3px;">三晉</span>
+                    者，中國也，其性和，其政平，其民疲於戰，習於兵，輕其將，薄其祿，士無死志，故治而不用。擊此之道，阻陳而壓之，眾來則拒之，去則追之，以倦其師。此其勢也。</p>
+            <p>然則一軍之中，必有虎賁之士，力輕扛鼎，足輕戎馬，搴旗取將，必有能者。若此之等，選而別之，愛而貴之，是謂軍命。其有工用五兵、材力健疾、志在吞敵者，必加其爵列，可以決勝。厚其父母妻子，勸賞畏罰，此堅陳之士，可與持久。審能料此，可以擊倍。」武侯曰︰「善。」</p>
+            </td>
+            <td><p>Phàm <span style="background-color: #603396; color: white; font-weight: bold; border: 1px solid; padding: 1px 1px; border-radius: 3px;">Tam Tấn</span>, là Trung Quốc. Tính tình nhu hoà, nền chính trị bình yên, dân mỏi mệt với chiến tranh, quen việc binh, coi khinh tướng mình, chẳng màn bổng lộc, sỹ tốt không ôm chí tử chiến, cho nên bày trận ngay ngắn mà vô tính thực dụng. Cách đánh họ, bày trận cản trở mà áp chế họ, quân họ đến thì chống cự, quân họ đi thì truy kích, để làm quân họ mỏi mệt. Đó là cái thế của họ.</p>
+            <p>Thế rồi cứ trong một quân, ắt phải có quân sỹ hổ bôn (lính mạnh như hổ), lực nhấc nhẹ đỉnh, chân nhanh như ngựa Nhung, giựt cờ bắt tướng đều làm được tất. Với đẳng người như thế, chọn mà phân biệt họ, yêu mà trân quý họ, đó gọi là quân mệnh. Họ giỏi thao lượt ngũ binh (1), tài lực khoẻ mạnh nhanh nhẹn, chí nuốt trọn địch, ắt gia phong thêm tước vị, có thể quyết thắng. Hậu đãi phụ mẫu thê tử của họ, khuyến thưởng họ mà khiến họ sợ trừng phạt, đấy là quân sỹ kiên trận, có thể cùng địch ghìm trận lâu. Có thể thận trọng liệu việc này, thì ắt đánh bại kẻ địch gấp bội." Vũ hầu nói: "Hay!"</p>
+                    <details><summary style="color: #31608C">Chú thích</summary><div style="color: #31608C; background-color: #E8BE9B;">(1)Ngũ binh 五兵: có lẽ nói đến việc dùng thành thạo năm loại binh khí: cung tiễn (弓箭) qua (戈)，mão (矛)，kích (戟)，sam (lưỡi liềm (芟)) </div></details>
+            </td>
+        </tr>
+
+        </tr>
+        <tr>
+            <td>吳子曰：「凡料敵，有不卜而與之戰者八：一曰疾風大寒，早興寤遷，剖冰濟水，不憚艱難；二曰盛夏炎熱，晏興無間，行驅飢渴，務於取遠；三曰師既淹久，糧食無有，百姓怨怒，祅祥數起，上不能止；四曰軍資既竭，薪芻既寡，天多陰雨，欲掠無所；五曰徒眾不多，水地不利，人馬疾疫，四鄰不至；六曰道遠日暮，士眾勞懼，倦而未食，解甲而息；七曰將薄吏輕，士卒不固，三軍數驚，師徒無助；八曰陳而未定，舍而未畢，行阪涉險，半隱半出。諸如此者，擊之勿疑。有不占而避之者六：一曰土地廣大，人民富眾；二曰上愛其下，惠施流布；三曰賞信刑察，發必得時；四曰陳功居列，任賢使能；五曰師徒之眾，兵甲之精；六曰四鄰之助，大國之援。凡此不如敵人，避之勿疑。所謂見可而進，知難而退也。」
+            </td>
+        <td>Ngô tử nói: "Phàm liệu địch, có tám việc không cần bói mà đánh ngay với địch: một là gió mạnh tê lạnh, địch dậy sớm dời chỗ, dẫu phá băng vượt sông cũng không từ nguy nan; hai là thịnh hạ nóng bức, nghỉ dậy (nghỉ ngơi thức dậy) vô lối, bị lùa hành quân khi đói khát, cốt để đánh chiếm xa; ba là quân ở ngoài lâu, lương thực chẳng còn, trăm họ oán nộ, điềm dữ xuất hiện, trên không thể ngăn; bốn là quân tư cạn kiệt, củi thảo (tức cỏ) đã ít, trời lại âm u mưa nhiều, muốn cướp không có chỗ; năm là bộ chúng không đông, thuỷ địa bất lợi, nhân mã bệnh tật, lân bang bốn bề không cứu; sáu là đường xa trời tối, sỹ chúng vừa mệt vừa sợ, rả rời mà chưa ăn, cởi giáp mà nghỉ; bảy là tướng bất tài, lại (quan lại) khinh suất, sỹ tốt lòng không vững, ba quân kinh hãi, không có cứu viện; tám là liệt trận mà chưa định, hạ trại chưa xong, đi lại nơi núi non hiểm trở, nửa ẩn nấp nửa lộ diện. Những việc như thế, đánh không cần nghi. Có sáu việc không bói mà nên tránh: một là đất rộng lớn, nhân dân giàu mà đông đúc; hai là trên yêu mến dưới, ban ân bố huệ rộng khắp; ba là thưởng nghiêm phạt minh, phát quân ắt được thời; bốn là chiếu theo công mà định bậc thưởng, chiêu hiền đãi sỹ; năm là quân binh đông đúc, binh tinh giáp tốt; sáu là lân bang bốn phiá giúp đỡ, được đại quốc chi viện. Phàm như thế không bằng kẻ địch, thì quyết tránh đừng hồ nghi. Cái gọi là thấy được thì tiến, biết khó thì lui chính là vậy."</td>
+        </tr>
+        <tr>
+            <td>武侯問曰：「吾欲觀敵之外，以知其內，察其進，以知其止，以定勝負，可得聞乎？」起對曰：「敵人之來，蕩蕩無慮，旌旗煩亂，人馬數顧，一可擊十，必使無措；諸侯未會，君臣未和，溝壘未成，禁令未施，三軍匈匈，欲前不能，欲去不敢，以半擊倍，百戰不殆。」
+            </td>
+            <td>Võ hầu hỏi: "Ta muốn dò xét bên ngoài địch để biết bên trong địch, xét chúng khi tiến, thấy chúng lúc lui, để định thắng bại, ngài giảng được không?" Khởi đáp: "Kẻ địch mà đến, lũ lượt vô lo, cờ xý hỗn loạn, nhân mã mấy lần quay đầu lại, như thế thì ta lấy một đánh mười, tất khiến chúng hết đường xoay sở. Chư hầu chưa hội, quân thần chưa biết, luỹ hào chưa xong, lệnh cấm chưa ban, ba quân huyên náo, muốn tiến chẳng thể, muốn về không dám, lấy nửa đấu gấp đôi, trăm chiến bất bại."</td>
+        </tr>
+
+        <tr>
+            <td>武侯問敵必可擊之道。起對曰：「用兵必審敵虛實而趨其危。敵人遠來新至，行列未定，可擊；既食未設備，可擊；奔走，可擊；勤勞，可擊；未得地利，可擊；失時不從，可擊；涉長道，後行未息，可擊；涉水半渡，可擊；險道狹路，可擊；旌旗亂動，可擊；陳數移動，可擊；將離士卒，可擊；心怖，可擊。凡若此者，選銳衝之，分兵繼之，急擊勿疑。」
+            </td>
+            <td>
+                Võ hầu hỏi cách tất có thể đánh địch, Khỏi đáp: "Dụng binh ắt phải xét hư thực của địch mà khiến chúng nguy khốn. Địch từ xa mới đến, hàng ngũ chưa định, có thể đánh; đang ăn chưa kịp phòng bị, đánh; địch bỏ chạy, đánh; đang mệt mỏi lao nhọc; đánh; chưa có được địa lợi; đánh; lỡ thời mất cơ, đánh; vượt được dài, sau mới tới chưa nghỉ ngơi; đánh; băng sông lên bờ một nửa, đánh; cờ xí rối loạn; đánh; thế trận xê dịch nhiều lần; đánh; tướng xa rời sỹ tốt; đánh; tâm địch sợ hãi, đánh. Phàm những điều như thế, tuyển tinh nhuệ xung kích địch, phân binh tiến sau, đánh gấp không nghi ngại!"
+            </td>
+        </tr>
+
+    </table>
