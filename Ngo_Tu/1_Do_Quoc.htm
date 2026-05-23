@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ngô tử 1</title>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap"
+  rel="stylesheet"
+/>
+    
+<style>
+
+@media screen and (max-width: 768px) {
+
+    tr {
+        display: block;
+    }
+
+    td {
+        display: block;
+        width: 100% !important;
+    }
+
+    .header {
+        font-size: 36px !important;
+        height: auto !important;
+        padding: 40px 20px;
+    }
+
+    .dropdown-content {
+        width: 100%;
+        left: 0;
+    }
+
+    p, div, td {
+        font-size: 16px !important;
+        line-height: 1.6;
+    }
+}
+    
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* TABLE LAYOUT FIX */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-image: url('xuanthu2.jpg');
+    background-color: #EDE3E1;
+}
+
+td, th {
+    padding: 12px;
+    vertical-align: top;
+    font-family: "Calibri", "Kaiti TC";
+    font-size: 18px;
+}
+
+/* HEADER */
+.header {
+    background-color: #d1d1d1;
+    font-size: 50px;
+    text-align: center;
+}
+
+/* SECTION TITLE */
+.section-title {
+    background-color: #E8E3C3;
+    text-align: center;
+    font-size: 20px;
+}
+
+/* COLLAPSIBLE FIX */
+details {
+    width: 100%;
+}
+
+details > div {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+}
+
+/* TEXT */
+p {
+    margin: 8px 0;
+    text-align: justify;
+}
+
+.hero-banner {
+    width: 100%;
+    min-height: 40vh;
+
+    background-image: url('xuanthu.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 20px;
+}
+
+.hero-title {
+    font-family: 'Ma Shan Zheng', cursive;
+    color: white;
+
+    font-size: clamp(32px, 7vw, 80px);
+
+    text-align: center;
+
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+
+    line-height: 1.2;
+}
+.dropdown-td {
+    position: relative !important; /* This is the anchor */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute; /* Changed from relative to absolute */
+    width: 200px;
+    background-color: #6E5945;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+    z-index: 100;
+    left: 0;
+    top: 100%;
+    
+    /* ADDED: This handles the long list of chapters */
+    max-height: 400px; 
+    overflow-y: auto; 
+    
+    padding-top: 12px; 
+    color: #FFFFFF;
+    text-align: left;
+    font-family: sans-serif;
+    line-height: 1.2;
+}
+
+/* Treat the first line of text as a header */
+.dropdown-content {
+    font-size: 12px;
+    letter-spacing: 1px;
+    /* This ensures "CHƯƠNG 1" has the same left-alignment as the links */
+    text-indent: 16px; 
+}
+
+/* Style the links so they look like buttons */
+.dropdown-content a {
+    color: white;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    font-weight: normal;
+    font-size: 14px;
+    text-indent: 0; /* Reset the indent from the parent */
+    transition: background 0.2s;
+    }
+
+/* A subtle hover that doesn't clash with brown */
+.dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Show menu */
+.dropdown-td:hover .dropdown-content,
+.dropdown-td.active .dropdown-content {
+    display: block;
+}.dropdown-td:hover .dropdown-content {
+    display: block;
+    }
+
+/* Clean up the separator */
+.dropdown-content hr {
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    margin: 5px 0;
+}
+    
+.hero-section {
+    position: relative;
+
+    width: 100%;
+    min-height: 300px;
+
+    background-image: url('xuanthu.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: visible;
+}
+
+/* dark overlay */
+.hero-section::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0,0,0,0.25);
+
+    z-index: 1;
+}
+
+/* content stays above overlay */
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    text-align: center;
+}
+
+/* title */
+.hero-title {
+    font-family: 'Ma Shan Zheng', cursive;
+    color: white;
+
+    font-size: clamp(32px, 7vw, 80px);
+
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+
+    padding: 20px;
+}
+
+/* mobile fix */
+@media screen and (max-width: 768px) {
+
+    .hero-section {
+        min-height: 220px;
+
+        background-position: center center;
+    }
+
+    .hero-title {
+        font-size: clamp(28px, 8vw, 42px);
+        line-height: 1.2;
+    }
+
+    .dropdown-content {
+        width: 100%;
+        max-width: 100vw;
+        left: 0;
+    }
+}
+
+.chapter-btn {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 18px;
+    width: 100%;
+    font-family: "Calibri", "Kaiti TC";
+}
+
+.chapter-btn:hover {
+    background-color: rgba(255,255,255,0.08);
+}
+@media screen and (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    table,
+    tr,
+    td {
+        display: block;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    td {
+        padding: 14px;
+        font-size: 16px !important;
+        line-height: 1.7;
+    }
+/* MOBILE FIXES */
+@media screen and (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    table,
+    tr,
+    td {
+        display: block;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    td {
+        padding: 14px;
+        font-size: 16px !important;
+        line-height: 1.7;
+    }
+   .hero-banner {
+        min-height: 220px;
+        padding: 30px 15px;
+        background-position: center center;
+    }
+
+    .hero-title {
+        font-size: clamp(30px, 9vw, 44px);
+        line-height: 1.25;
+        padding: 10px;
+    }
+
+    .section-title {
+        font-size: 20px !important;
+        text-align: center;
+    }
+
+    .chapter-btn {
+        width: 100%;
+        font-size: 18px;
+        padding: 14px;
+    }
+   .dropdown-content {
+        position: relative !important;
+        width: 100% !important;
+        max-width: 100%;
+        left: 0;
+        top: 0;
+        max-height: 320px;
+        overflow-y: auto;
+        box-sizing: border-box;
+    }
+</style>
+</head>
+
+<body>
+<script>
+document.querySelectorAll('.chapter-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+
+        const parent = this.closest('.dropdown-td');
+
+        document.querySelectorAll('.dropdown-td').forEach(item => {
+            if (item !== parent) {
+                item.classList.remove('active');
+            }
+        });
+
+        parent.classList.toggle('active');
+    });
+});
+window.addEventListener('click', function() {
+    document.querySelectorAll('.dropdown-td').forEach(item => {
+        item.classList.remove('active');
+    });
+});
+</script>
+
+<!-- HEADER -->
+<table>
+<div class="hero-banner">
+    <div class="hero-title">
+        吳子 - Ngô tử
+    </div>
+</div>
+</table>
+
+<!-- SECTION TITLE -->
+<table>
+<tr>
+    <td class="section-title" style="width:50%;background-color: #C49180; color: white;"><b>第一圖國</b></td>
+<td align="center"
+    class="dropdown-td"
+    style="background-color: #945843; color: white; position: relative;">
+
+    <button class="chapter-btn">
+        Chương 1 - Đồ quốc ▼
+    </button>
+
+    <div class="dropdown-content">
+        <div style="padding:10px 16px;font-weight:bold;">
+            NGÔ TỬ 
+        </div>
+        <hr>
+        <a href = "Content.htm";>Mục lục</a>
+        <a href="2_Lieu_Dich.htm">Chương 2 - Liệu địch</a>
+        <a href="chuong3.html">Chương 3 - Trị binh</a>
+        <a href="chuong4.html">Chương 4 - Luận tướng</a>
+        <a href="chuong5.html">Chương 5 - Ứng biến</a>
+        <a href="chuong6.html">Chương 6 - Khích sĩ</a>
+    </div>
+</td>
+</tr>
+<tr>
+    <td><p>吳起儒服以兵機見魏文侯。</p>
+        <p>文侯曰：「寡人不好軍旅之事。」</p></td>
+    <td><p>Ngô Khởi mặc Nho phục đem việc binh cơ diện kiến Nguỵ Văn hầu.</p>
+        <p>Nguỵ Văn hầu nói: "Quả nhân không thích chuyện quân lữ (1)"</p>
+        <details><summary style="color: #31608C">Chú thích</summary><div style="color: #31608C; background-color: #E8BE9B;">(1)軍旅 [quân lữ]: việc binh, việc quân sự, việc quân doanh</div></details>
+    </td>
+</tr>
+<tr>
+    <td>起曰：「臣以見占隱，以往察來，主君何言與心違？今君四時使斬離皮革，掩以朱漆，畫以丹青，爍以犀象，冬日衣之則不溫，夏日衣之則不涼。為長戟二丈四尺，短戟一丈二尺，革車奄戶，縵輪籠轂，觀之於目則不麗，乘之以田則不輕，不識主君安用此也？若以備進戰退守而不求能用者，譬猶伏雞之搏狸、乳犬之犯虎，雖有鬥心，隨之死矣。昔承桑氏之君，修德廢武，以滅其國；有扈氏之君，恃眾好勇，以喪其社稷。明主鑒玆，必內修文德，外治武備。故當敵而不進，無逮於義矣；僵屍而哀之，無逮於仁矣。」
+</td>
+    <td>Khởi nói: "Thần vì sự hiển hiện mà suy tính điều sâu kín, lấy xưa xét nay, chúa thượng sao nói lời trái tâm mình? Nay ngài bốn mùa sai chặt cắt da thú, ngoài sơn màu đỏ đằng (1), vẽ màu đỏ xanh, đem hình tê tượng vẽ lên, mùa đông mặc áo ấy không ấm, mùa hạ mặc áo ấy không mát.(1) Ngài cho làm trường kích hai trượng bốn xích, đoản kích một trượng hai xích(2), lấy da che cửa sổ xe, lấy da che lấp bánh xe và đậy lên bầu xe(3), mắt nhìn thấy không đẹp, cưỡi xe ấy đi săn (4) không nhẹ nhàng, không biết chúa thượng sao dùng được vật ấy?" Nếu đương lúc chuẩn bị tiến chiến thoái thủ (tiến lên đánh, thoái lui phòng thủ) mà không tìm được người dùng được (chiến xa ấy), thì cũng như gà đương ấp trứng mà hòng trói hồ ly, chó đang cho bú mà hòng quật hổ, tuy có tâm đấu, song cũng theo đó mà chết thôi. Xưa quân chủ họ Thừa Tang, tu đức phế võ (sửa soạn việc văn mà phế bỏ việc quân), đến nỗi bị diệt quốc; lại có quân vương họ Hỗ, cậy đông hiếu dũng (cậy quân đông mà hiếu chiến), đến nỗi vong xã tắc. Bậc minh chủ xét gương ấy, ắt trong tu văn đức, ngoài sửa võ bị. Cho nên đương đầu với địch mà không tiến, thì chẳng bàn nỗi chuyện nghĩa; thây chết mà khóc thương, thì chẳng với nỗi việc nhân đâu.
+                <details><summary style="color: #31608C">Chú thích</summary><div style="color: #31608C; background-color: #E8BE9B;"><p>(1)Ở đây đang nói cách chế tạo giáp da. 朱漆 (chu đằng) là sơn mài, quét lớp sơn mài lên da để khiến da cứng lại. Trước khi quét phải nấu da lên. Giáp trụ bằng da chia hai loại: một là loại giáp da nấu (boiled leather), hai là loại giáp da phết sơn sơn mài (lacquered leather). Sơn mài là nguyên liệu dùng để sơn lên da và đồ gỗ. Thời Tây Chu đến Hán đồ gỗ đều sơn thứ sơn này, chủ yếu lấy đen và đỏ là hai màu chủ đạo.</p>
+                    <p>(2) 戟 (kích) là loại vũ khí kết hợp giữa đầu giáo và lưỡi qua (戈), tiện việc đâm thẳng và phạt ngang. Bộ binh dùng nó để đâm và móc kéo kỵ sỹ hay xa sỹ, xa binh dùng nó để phạt ngang bộ binh khi xe xung kích trận địch. 2 trượng 6 xích sách Ngô tử thiển thuyết (吴子浅说) chú một trượng bằng sáu xích ngày nay (chú số 8, trang 59), tức cỡ 33.33cm. Sách "Ngô tử binh pháp chú thích" (吴子兵法注释) chú một xích bằng 0.23m. Một trượng bằng 10 xích, vậy nên 2 trượng 4 xích = 5.52m; 1 trượng 2 xích = 2.76m" </p>
+                    <p>(3) 縵輪籠轂: 縵 và 籠 đều chỉ che đậy. Lê Xuân Mai dịch thành "bánh và trục rất thô kệch" là dịch sai. 轂 là bầu bánh xe, tức vòng tròn nơi các căm xe tủa ra, lắp đằng đầu trục xe. Nguyên văn chẳng có chỗ nào nói bánh xe và căm xe "thô kệch" cả. 爍 thông với 鑠, tức là cùng nghĩa với 銷, tức nung chảy kia loại. Sách "Ngô tử kim chú kim dịch" (吳子今註今譯) diễn giải thành vẽ hình tê giác và voi hay mãnh thú lên áo giáp và chiến xa để khiến kẻ địch khiếp sợ.</p>
+                    <p>(4) Nguyên văn chỉ có chữ "điền", Lê Xuân Mai dịch thành "đi xem ruộng", cũng là một cách dịch có lý. Song lại có từ "điền liệp" (田獵), chỉ đi săn. Vua chúa thời Xuân thu - Chiến quốc thường cưỡi xe đi săn, các sách dịch bạch thoại Trung Quốc đều dịch như thế, nay theo lối dịch ấy. </p></div></details>
+</tr>
+<tr>
+<td>於是文侯身自布席，夫人捧觴，醮吳起於廟，立為大將，守西河。與諸侯大戰七十六，全勝六十四，餘則鈞解。闢土四面，拓地千里，皆起之功也。</td>
+<td>Do vậy Văn hầu thân tự bố trí chỗ ngồi, phu nhân dâng "thương" rượu (chén rượu), cùng Ngô Khởi tế ở (thái) miếu, lập làm đại tướng, thủ Tây Hà. Khởi cùng chư hầu đại chiến 76 trận, toàn thắng 64 trận, còn lại đều bất phân thắng bại. Bờ cõi mở mang tứ phương, đất rộng thêm nghìn lý, đều là công của Khởi.</td>
+</td>
+</tr>
+<tr>
+<td>
+吳子曰：「昔之圖國家者，必先教百姓而親萬民。有四不和：不和於國，不可以出軍；不和於軍，不可以出陳；不和於陳，不可以進戰；不和於戰，不可以決勝。是以有道之主，將用其民，必先和而造大事。不敢信其私謀，必告於祖廟，啟於元龜，參之天時，吉乃後舉。民知君之愛其命，惜其死，若此之至，而與之臨難，則士以進死為榮，退生為辱矣。」</td>
+<td>Ngô tử nói: "Xưa bậc quân vương vị quốc gia mưu đồ, tất trước tiên dạy bách tính mà gần gũi vạn dân. Có bốn mối bất hoà: bất hoà trong nước thì không thể xuất quân; bất hoà trong quân thì không thể xuất trận; bất hoà giữa trận thì không thể tiến đánh; bất hoà lúc đánh thì không thể quyết thắng. Cho nên bậc quân chủ có đạo, nếu muốn dùng dân mình, ắt trước khiến trong nước hoà hợp mới làm đại sự. Bậc ấy không dám tin mưu tính riêng của mình, tất cáo nơi miếu tổ tông, xem bói trên mai, xét thiên thời tốt xấu, rồi mới cử binh. Dân biết quân vương trân quý tính mệnh mình, thương tiếc mình chết, nếu cứ như thế, mà lúc lâm nguy, thì bậc sỹ lấy tiến lên mà chết làm vinh, thoái lui ham sống mà làm nhục."</td>
+</tr>
+
+<tr>
+<td>
+吳子曰：「夫道者，所以反本復始；義者，所以行事立功；謀者，所以違害就利；要者，所以保業守成。若行不合道，舉不合義，而處大居貴，患必及之。是以聖人綏之以道，理之以義，動之以禮，撫之以仁。此四德者，修之則興，廢之則衰。故成湯討桀而夏民喜悅，周武伐紂而殷人不非。舉順天人，故能然矣。」
+<td>Ngô tử nói: "Ôi đạo ấy chính là quy căn phục bổn (quay về nguồn gốc cội rễ); "nghĩa" chính là hành sự lập công; "mưu" chính là tránh hại gần lợi; "yếu" chính là gìn giữ cơ nghiệp bảo tồn thành quả. Nếu như làm không hợp đạo, cử sự không hợp nghĩa, mà thân nắm chức lớn, chiếm chỗ cao quý, thì hoạ ắt tới. Cho nên thánh nhân yên dân bằng đạo, trị dân bằng nghĩa, cảm động dân bằng lễ, vỗ yên dân bằng nhân. Bốn đức này, nếu chuyên tu thì hưng, phế chúng thì suy. Cho nên Thành, Thang phạt Trụ mà dân Hạ vui thích; Văn, Vũ phạt Trụ mà người Thương chẳng cho là trái, cử binh thuận trời hợp nhân, cho nên mới được như thế."</td>
+</td>
+</tr>
+
+<tr>
+<td>
+吳子曰：「凡制國治軍，必教之以禮，勵之以義，使有恥也。夫人有恥，在大足以戰，在小足以守矣。然戰勝易，守勝難。故曰︰『天下戰國，五勝者禍，四勝者弊，三勝者霸，二勝者王，一勝者帝。』是以數勝得天下者稀，以亡者眾。」
+</td>
+<td> Ngô tử nói: "Phàm quản quốc trị binh, ắt dạy dân bằng lễ, khích lệ dân bằng nghĩa, khiến họ biết sỉ thẹn. Phàm người mà biết thẹn, đông thì đủ đánh, ít thì đủ thủ. Thế nhưng đánh thắng dễ, thủ thắng khó. Cho nên nói: "Thiên hạ chiến quốc, năm lần thắng là hoạ, bốn lần thắng là tệ, ba lần thắng là bá, hai lần thắng là vương, một lần thắng là đế." Vậy nên kẻ nhiều lần thắng mà có thiên hạ, ít thay, đa phần tự tiêu vong."
+</td>
+</tr>
+
+<tr>
+<td>
+吳子曰：「凡兵之所起者有五：一曰爭名，二曰爭利，三曰積惡，四曰內亂，五曰因饑。其名又有五：一曰義兵，二曰強兵，三曰剛兵，四曰暴兵，五曰逆兵。禁暴救亂曰義，恃眾以伐曰強，因怒興師曰剛，棄禮貪利曰暴，國亂人疲、舉事動眾曰逆。五者之數，各有其道：義必以禮服，強必以謙服，剛必以辭服，暴必以詐服，逆必以權服。」
+</td>
+<td>
+Ngô tử nói: "Phàm nguồn cơn việc binh có năm: một là tranh danh; hai là tranh lợi; ba là tích ác; bốn là nội loạn; năm là đói kém. Nói về binh lại có năm điều: một là nghĩa binh; hai là cường binh; ba là cương binh; bốn là bạo binh; năm là nghịch binh. Ngăn bạo cứu loạn gọi là nghĩa; ỷ đông mà phạt gọi là cường; do nộ hưng sư gọi là cương; bỏ lễ tham lợi gọi là bạo; quốc loạn người mỏi mệt, cử sự động đến dân chúng gọi là nghịch. Năm điều này mỗi cái có cách riêng của nó: nghĩa tất lấy lễ khiến uy phục; cường tất lấy mưu kế khiến uy phục; cương tất lấy từ tốn khiến uy phục; bạo tất lấy gian trá khiến uy phục; nghịch tất lấy lễ khiến uy phục."
+</td>
+<tr>
+    
+<tr>
+<td>
+武侯問曰：「願聞治兵、料人、固國之道。」起對曰：「古之明王，必謹君臣之禮，飾上下之儀，安集吏民，順俗而教，簡募良材，以備不虞。昔齊桓募士五萬，以霸諸侯；晉文召為前行四萬，以獲其志；秦繆置陷陣三萬，以服鄰敵。故強國之君，必料其民。民有膽勇氣力者，聚為一卒；樂於進戰效力以顯其忠勇者，聚為一卒；能踰高超遠、輕足善走者，聚為一卒；王臣失位而欲見功於上者，聚為一卒；棄城去守、欲除其醜者，聚為一卒。此五者，軍之練銳也。有此三千人，內出可以決圍，外入可以屠城矣。」
+</td>
+    
+<td>
+<p>
+Vũ hầu (nghe xong mới) nói: "Nguyện nghe về đạo trị binh, liệu người, củng cố bang quốc" Ngô Khởi đáp: "Minh vương đời cổ, tất cẩn thận giữ nghiêm lễ quân thần; chỉnh đốn nghĩa trên dưới; yên quan lại, chiêu tập dân, thuận theo phong tục mà dạy dân, giản dị chiêu mộ hiền lương, để phòng bị chuyện không hay. Xưa Tề Hoàn mộ sỹ năm vạn mà bá chư hầu (1); Tần Văn chiêu mộ binh sỹ đi hàng đầu bốn vạn mà đạt được chí hướng (2); Tần Mục đặt quân hãm trận ba vạn, mà phục lân bang thù địch (3). Cho nên bậc quân vương cường quốc, ắt phải liệu dân. Dân kẻ gan dũng khí lực (tức có gan và dũng khí), tụ lại thành một tốt (4), dân kẻ vui vì ra sức tiến đánh để chứng tỏ lòng trung dũng; tụ lại thành một tốt; dân kẻ có thể vượt cao băng xa, chân nhẹ đi nhanh, hợp thành một tốt; bậc vương thần mất danh vị mà muốn lập công với bề trên, hợp thành một tốt; dân kẻ mất thành bỏ việc phòng thủ, mà muốn trừ đi vết nhơ của mình, hợp thành một tốt. Năm bậc này là binh tinh nhuệ luyện được trong quân. Có ba nghìn người như thế, từ trong đi ra có thể phá vây, từ ngoài đi vào có thể đồ thành (đồ sát dân quân trong thành)."
+</p>
+        <details><summary style="color: #31608C">Chú thích</summary><div style="color: #31608C; background-color: #E8BE9B;">  <p><b><u>Tề Hoàn công</u></b> là một trong Ngũ bá đời Xuân thu. Tả truyện và Quốc ngữ đều không ghi Hoàn công có 50,000 quân. Quốc ngữ có đoạn sau:</p>
+            <p>管子于是制國：「五家為軌，軌為之長；十軌為里，里有司；四里為連，連為之長；十連為鄉，鄉有良人焉。以為軍令：五家為軌，故五人為伍，軌長帥之；十軌為里，故五十人為小戎，里有司帥之；四里為連，故二百人為卒，連長帥之；十連為鄉，故二千人為旅，鄉良人帥之；五鄉一帥，故萬人為一軍，五鄉之帥帥之。三軍，故有中軍之鼓，有國子之鼓，有高子之鼓。春以蒐振旅，秋以狝治兵。是故卒伍整于里，軍旅整于郊。內教既成，令勿使遷徙。伍之人祭祀同福，死喪同恤，禍災共之。人與人相疇，家與家相疇，世同居，少同游。故夜戰聲相聞，足以不乖；晝戰目相見，足以相識。其歡欣足以相死。居同樂，行同和，死同哀。是故守則同固，戰則同強。君有此士也三萬人，以方行于天下，以誅無道，以屏周室，天下大國之君莫之能御。」</p>
+            <p>Quản tử do vậy quản quốc: "Năm nhà (gia) thành một quỹ, đứng đầu quỹ là một trưởng; mười quỹ (tức 50 nhà) làm một lý, lý có ti; bốn lý (200 nhà) là một liên, đứng đầu liên là một trưởng; mười liên (2000 nhà), hương có lương nhân, cho làm quân lệnh. Năm nhà là một quỹ, cho nên năm người là thành đội, quỹ trưởng chỉ huy họ; mười quỹ làm một lý, cho nên năm mươi người làm tiểu nhung; lý có ti chỉ huy họ; bốn lý làm một cổ. Xuân thì săn bắt trong quân lữ, thu thì săn bắn trị binh. Cho nên tốt tốt ngũ chỉnh tề ở lý, quân lữ chỉnh tề ở giao. Bên trong dạy đã xong, lệnh không cho dời đổi. Người trong ngũ cúng tế cùng phúc, chết tang cùng tuất, hoạ nạn cùng nhau. Người và người cùng cày ruộng, nhà và nhà cùng cày ruộng, đời đời cùng chung nơi ở, nhỏ thì cùng chơi với nhau. Cho nên đêm đến cùng nghe tiếng (trống) trận, đủ để không chia li; ban ngày mắt thấy nhau, đủ nhận ra nhau. Họ hoan hỉ đủ để cùng nhau chết. Cùng định cư hoan vui, đi cùng nhau hoà hảo, chết cùng nhau điêu ai. CHo nên phòng thủ thì đều vững chắc, tiến công thì đều hùng mạnh. Nhà vua có ba vạn kẻ sỹ này, để đi vuông khắp thiên hạ, để giết kẻ vô đạo, nhằm che chở cho Chu thất, quân vương thiên hạ đại quốc chẳng ai phòng ngự nỗi."</p>
+            <p><b><u>Tấn Văn công</u></b> cũng là một trong Ngũ bá. Tả truyện và Quốc ngữ không chỗ nào nói công có 40,000 quân. Tuy
+            Như vậy Quốc ngữ chỉ ghi Tề Hoàn công có 30,000 quân, không phải 50,000 quân. Theo Chu lễ, một quân có 12,500 người. Vương sư có 6 quân, đại quốc có 3 quân (37,500 người); thứ quốc có 2 quân (25,000 người) và tiểu quốc có 1 quân (12,500 người). Theo đó mà xét thì Tấn có xấp xỉ cả nước 40,000 quân, khá hợp lý.</p>
+            <p><b><u>Tần Mục công</u></b> cũng là một trong Ngũ bá. Hàn Phi tử ghi trong chương "Thập quá" (Mười lỗi) như sau:<br>
+            "秦穆公召羣臣而謀曰：「昔者晉獻公與寡人交，諸侯莫弗聞。獻公不幸離羣臣，出入十年矣。嗣子不善，吾恐此將令其宗廟不祓除而社稷不血食也。如是弗定，則非與人交之道。吾欲輔重耳而入之晉，何如？」羣臣皆曰：「善。」公因起卒，革車五百乘，疇騎二千，步卒五萬，輔重耳入之於晉，立爲晉君。"
+            Tần Mục công chiêu quần thần đến mà mưu rằng: "Xưa Tấn Hiến công cùng quả nhân giao hảo, chư hầu không ai nghe. Hiến công chẳng may xa lìa quần thần, ra vào trong nước mười năm. Người con kế vị bất thiện, ta sợ việc này sẽ khiến tông miếu nước ấy không được gội rửa, xã tắc không có gì tế hiến. Nếu như thế thì chưa định, không phải là đạo giao hảo với người. Ta muốn giúp Trọng Nhĩ nhập Tấn, các khanh thấy thế nào?" Quần thần đáp: "Được." Công bèn nhân dó cử quân, chiến xa năm trăm thặng, tinh kỵ hai nghìn, bộ tốt năm vạn, giúp Trọng Nhĩ nhập Tấn, lập làm Tấn quân.</p>
+            Câu chuyện này không được ghi trong Tả truyện hay Quốc ngữ, cho nên xuất hiện khá trễ. Song Tần bấy giờ có cỡ 30,000 quân cũng không phải là quá phi lý.
+            
+            
+            <p>(4)卒 [tốt]: tốt vốn là đơn vị biên ngũ, một tốt có 100 người.</p></div></details>
+</td>
+</tr>
+        
+<tr>
+<td>
+武侯問曰：「願聞陳必定、守必固、戰必勝之道。」起對曰：「立見且可，豈直聞乎？君能使賢者居上，不肖者處下，則陳已定矣；民安其田宅，親其有司，則守已固矣；百姓皆是吾君而非鄰國，則戰已勝矣。」
+    
+<td>
+Võ hầu lại hỏi: "(Quả nhân) lại muốn nghe cái đạo bày trận tất định, phòng thủ ắt chắc, đánh ắt thắng." Ngô Khởi nói: "Đứng nhìn còn được, há chỉ nghe thôi? Ngài có thể đặt người hiền lên trên, kẻ không hiền ở dưới, thì trận định rồi vậy. Dân yên bề ruộng ốc (ruộng và nhà), thân với quan lại, thì thủ đã vững chắc; bách tính đều cho rằng quân vương ta phải; lân bang trái, thì đánh đã thắng rồi."
+</td>
+</td>
+</tr>
+        
+<tr>
+<td>
+武侯嘗謀事，群臣莫能及，罷朝而有喜色。起進曰：「昔楚莊王嘗謀事，群臣莫能及，罷朝而有憂色。申公問曰：『君有憂色，何也？』曰：『寡人聞之，世不絕聖，國不乏賢。能得其師者王，能得其友者霸。今寡人不才而群臣莫及者，楚國其殆矣。』此楚莊王之所憂而君說之，臣竊懼矣。」於是武侯有慚色。
+</td>
+    
+<td><p>
+Võ hầu từng mưu sự, quần thần chẳng ai theo kịp, bãi triều nhưng sắc mặt mừng. Khởi tiến lời: "Xưa Sở Trang Vương từng mưu sự, quần thần chẳng ai bằng, bãi triều mà sắc mặt. Võ hầu từng mưu sự, quần thần chẳng ai theo kịp, bãi triều nhưng sắc mặt mừng. Khởi tiến lời: "Xưa Sở Trang Vương từng mưu sự, quần thần chẳng ai bằng, bãi triều mà sắc mặt ưu lo. Thân công hỏi: "Vương sắc mặt ưu phiền, là vì sao?" Đáp:"Quả nhân nghe họ, thế gian chẳng hết bậc thánh; quốc gia chẳng thiếu bậc hiền. Có thể tôn họ làm thầy thì xưng vương, có thể kết họ thành bạn thì xưng bá. Nay quả nhân bất tài mà quần thần không ai bằng nổi, Sở quốc thật tiêu vong rồi." Đấy là vì sao chỗ Sở vương ưu lo mà ngài lấy làm vui, thần trộm sợ trong lòng." Do vậy Nguỵ Vũ hầu hơi biến sắc.</p>
+       <details><summary style="color: #31608C">Chú thích</summary><div style="color: #31608C; background-color: #E8BE9B;">Mẫu chuyện này được lưu lại trong sách "Tân tự" của Lưu Hướng đời Đông Hán. Mục "Tạp sự", quyển 1:
+           <p>昔者，魏武侯謀事而當，群臣莫能逮，朝退而有喜色。吳起進曰：「今者有以楚莊王之語聞者乎？」武侯曰：「未也，莊王之語奈何？」吳起曰：「楚莊王謀事而當，群臣莫能逮，朝退而有憂色。申公巫臣進曰：‘君朝有憂色，何也？’楚王曰：‘吾聞之，諸侯自擇師者王，自擇友者霸，足己而群臣莫之若者亡。今以不穀之不肖而議於朝，且群臣莫能逮，吾國其幾於亡矣，是以有憂色也。’莊王之所以憂，而君獨有喜色，何也？」武侯逡巡而謝曰：「天使夫子振寡人之過也，天使夫子振寡人之過也。」</p><br>
+           Xưa, Nguỵ Vũ hầu mưu sự mà làm, quần thần không ai theo kịp, triều xong lui thì sắc mặt mừng. Ngô Khởi tiến lời: "Nay (ngài) có nghe qua lời của Sở Trang công chưa?" Võ hầu đáp: "Chưa, lời Lỗ Trang công thế nào? Ngô Khởi đáp: "Sở Trang công mưu sự mà làm, quần thần không ai theo kịp, triều xong lui thì sắc mặt ưu lo. Bậc thần Thân Công Vu tiến lời nói: "Ngài lên triều có vẻ ưu lo, sao thế?" Sở vương đáp: "Ta nghe nói, chư hầu tự chọn thầy thì làm vương, tự chon bạn thì xưng bá, đủ cho mình mà quần thân không ai bằng thì quốc sẽ vong. Nay lấy thân ta bất tài mà bàn giữa triều, quần thần không ai theo kịp, nước ta xem ra sắp vong rồi. Cho nên ta sắc mặt ưu lo." Trang Vương sở dĩ ưu lo, mà chỉ mình ngài có sắc mặt mừng rỡ, là tại làm sao?" Vũ hầu nhìn quanh rồi tạ: "Trời sai ngài làm ta tỉnh ngộ trước lỗi mình. trời quả sai ngài làm ta tỉnh ngộ vậy."<br>
+           Dựa trên mẫu chuyện này, thì có lẽ "Tân tự" sao chép chuyện này từ Ngô Khởi, mà chuyện này không có trong Tả truyện, có vẻ như nó là mẫu điển tích được Ngô Khởi đưa vào nhằm thuyết phục Nguỵ Vũ hầu.</div></details>
+</td>
+</tr>
+ </table>
